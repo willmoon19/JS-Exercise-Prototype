@@ -93,8 +93,18 @@ console.log(you.stomach);
 
   Car.prototype.fill = function(gallons){
     this.tank += gallons;
+    console.log(this.tank);
   };
 
+  Car.prototype.drive = function(distance){
+    this.odometer += distance;
+    this.tank -= (this.distance / this.milesPerGallon)
+    if(this.tank === 0){
+      console.log(`I ran out of fuel at ${this.odometer} miles!`);
+    };
+  };
+
+ 
   
   
   /*
@@ -117,11 +127,19 @@ console.log(you.stomach);
   
   /* 
     TASK 4
-    In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+      In your own words explain the four principles for the "this" keyword below:
+
+    1.New
+      When new is used while calling a function, uses that function to create a new object where "this" references the new object
+
+    2. Apply, Call, and Bind
+      These are used in order to pass an object as an argument through "this", through another object's function 
+
+    3. Function called as a method
+      Think of "this" as a variable, that we are passing an object through. When you have "this.name" it is equal to "obj.name"
+
+    4. Free function invocation
+      When a function is in the global scope and "this" has nothing to reference it will default to the window object? window?
   */
   
   
